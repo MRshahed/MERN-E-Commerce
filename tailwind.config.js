@@ -6,6 +6,9 @@ module.exports = {
     fontFamily: {
       sans: ["Urbanist", "sans-serif"],
     },
+    color: {
+      "color-1": "bg-purple-900",
+    },
   },
   plugins: [],
 };

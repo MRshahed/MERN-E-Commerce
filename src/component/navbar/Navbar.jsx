@@ -55,6 +55,7 @@ const Navbar = () => {
           >
             <CloseIcon />
           </button>
+
           <div>
             <ul className="flex flex-col justify-start items-start gap-5 mt-6 font-bold tracking-wider pb-4 text-stone-800">
               <li>New Arrival</li>

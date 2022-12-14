@@ -7,11 +7,10 @@ import img1 from "../../assets/home2.jpg";
 import img2 from "../../assets/home1.jpg";
 import img3 from "../../assets/home3.jpg";
 import { Autoplay, Pagination, Navigation } from "swiper";
-import { blue, red } from "@mui/material/colors";
 
 const Slider = () => {
   return (
-    <div className="h-[80vh]">
+    <div className="lg:h-[80.7vh] w-[100%] h-[92.7vh]">
       <Swiper
         spaceBetween={0}
         centeredSlides={true}
@@ -28,13 +27,25 @@ const Slider = () => {
         className="mySwiper h-[100%] bg-purple-900"
       >
         <SwiperSlide>
-          <img src={img1} className="h-[auto]  w-[100%]" alt="img" />
+          <img
+            src={img1}
+            className="lg:h-[auto] h-[100%] lg:object-contain object-cover w-[100%]"
+            alt="img"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={img2} className="h-[auto]  w-[100%]" alt="img" />
+          <img
+            src={img2}
+            className="lg:h-[auto] h-[100%] lg:object-contain object-cover w-[100%]"
+            alt="img"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={img3} className="h-[auto]  w-[100%]" alt="img" />
+          <img
+            src={img3}
+            className="lg:h-[auto] h-[100%] lg:object-contain object-cover w-[100%]"
+            alt="img"
+          />
         </SwiperSlide>
       </Swiper>
     </div>

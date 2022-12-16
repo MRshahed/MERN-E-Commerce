@@ -34,14 +34,14 @@ const Footer = () => {
           <p>Home</p>
           <p>Man Fashion</p>
           <p>Accessories</p>
-          <p>Order Tracking</p>
+          <p>Cart</p>
           <p>Wishlist</p>
         </div>
 
         <div className="  text-base font-semibold leading-4 text-gray-800  flex flex-col gap-5">
-          <h2>Support</h2>
-          <p>Legal policy</p>
-          <p>Status policy</p>
+          <h2>Account</h2>
+          <p>Order Tracking</p>
+          <p>Support</p>
           <p>Privacy policy</p>
           <p>Terms of service</p>
         </div>

@@ -24,7 +24,7 @@ const Slider = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper h-[100%] bg-purple-900"
+        className="mySwiper h-[100%] bg-purple-100"
       >
         <SwiperSlide>
           <img

@@ -1,3 +1,9 @@
+import masterCard from "../assets/pngwing.com (1).png";
+import visaCard from "../assets/pngwing.com.png";
+import americanCard from "../assets/pngwing.com (2).png";
+import paypalCard from "../assets/pngwing.com (3).png";
+import discoverCard from "../assets/pngwing.com (4).png";
+
 export const categories = [
   {
     id: 1,
@@ -48,5 +54,31 @@ export const popularProducts = [
   {
     id: 8,
     img: "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+  },
+];
+
+export const paymentCard = [
+  {
+    id: 1,
+    img: masterCard,
+  },
+
+  {
+    id: 3,
+    img: visaCard,
+  },
+
+  {
+    id: 5,
+    img: americanCard,
+  },
+  {
+    id: 6,
+    img: paypalCard,
+  },
+
+  {
+    id: 8,
+    img: discoverCard,
   },
 ];

@@ -6,9 +6,9 @@ import { popularProducts } from "../../component/Data";
 
 const Product = () => {
   return (
-    <div className="grid xl:grid-cols-4 gap-5 items-center justify-center h-[100%] w-full px-10 md:grid-cols-2 grid-cols-1">
+    <div className="grid xl:grid-cols-4 gap-5 items-center justify-center h-[100%] w-full px-10 md:grid-cols-2 grid-cols-1 2xl:mx-auto 2xl:container">
       {popularProducts.map((product) => (
-        <div className=" h-[400px] w-[350px] bg-purple-100 flex items-center justify-center relative transition cursor-pointer ease-in-out hover:scale-105 hover:z-10">
+        <div className=" h-[400px] w-[350px] bg-gray-100 flex items-center justify-center relative transition cursor-pointer ease-in-out hover:scale-105 hover:z-10">
           <img
             src={product.img}
             key={product.id}

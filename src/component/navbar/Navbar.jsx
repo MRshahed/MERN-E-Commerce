@@ -14,7 +14,7 @@ import { useState } from "react";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <div>
+    <div className="2xl:mx-auto 2xl:container">
       <nav className="lg:hidden">
         <Box sx={{ flexGrow: 1 }}>
           <AppBar position="static">

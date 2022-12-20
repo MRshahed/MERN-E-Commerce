@@ -10,7 +10,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Slider = () => {
   return (
-    <div className="lg:h-[80.7vh] w-[100%] h-[92.7vh]">
+    <div className="lg:h-[80.7vh] w-[100%] h-[92.7vh] 2xl:mx-auto 2xl:container">
       <Swiper
         spaceBetween={0}
         centeredSlides={true}
@@ -24,7 +24,7 @@ const Slider = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper h-[100%] bg-purple-100"
+        className="mySwiper h-[100%] bg-gray-800"
       >
         <SwiperSlide>
           <img

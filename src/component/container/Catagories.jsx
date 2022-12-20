@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 
 const Catagories = () => {
   return (
-    <div className="py-10 px-10">
+    <div className="py-10 px-10 xl:mx-auto xl:container">
       <Swiper
         slidesPerView={4}
         centeredSlides={false}
@@ -27,7 +27,7 @@ const Catagories = () => {
         className="mySwiper h-[60vh] w-[100%]"
       >
         <SwiperSlide className="">
-          <div className="relative bg-purple-100 h-full w-full ">
+          <div className="relative bg-gray-800 h-full w-full ">
             <img src={img1} alt="img" className="h-full w-full object-cover " />
             <div className="flex flex-col absolute top-0 left-0 h-full w-full bg-gray-800 bg-opacity-20 justify-center items-center gap-y-6">
               <h1 className="text-white font-bold text-3xl">
@@ -39,7 +39,7 @@ const Catagories = () => {
         </SwiperSlide>
 
         <SwiperSlide className="">
-          <div className="relative bg-purple-900 h-full w-full">
+          <div className="relative bg-gray-800 h-full w-full">
             <img src={img1} alt="img" className="h-full w-full object-cover " />
             <div className="flex flex-col absolute top-0 left-0 h-full w-full bg-gray-800 bg-opacity-20 justify-center items-center gap-y-6">
               <h1 className="text-white font-bold text-3xl">
@@ -51,7 +51,7 @@ const Catagories = () => {
         </SwiperSlide>
 
         <SwiperSlide className="">
-          <div className="relative bg-purple-900 h-full w-full">
+          <div className="relative bg-gray-800 h-full w-full">
             <img src={img1} alt="img" className="h-full w-full object-cover " />
             <div className="flex flex-col absolute top-0 left-0 h-full w-full bg-gray-800 bg-opacity-20 justify-center items-center gap-y-6">
               <h1 className="text-white font-bold text-3xl">
@@ -63,7 +63,7 @@ const Catagories = () => {
         </SwiperSlide>
 
         <SwiperSlide className="">
-          <div className="relative bg-purple-900 h-full w-full">
+          <div className="relative bg-gray-800 h-full w-full">
             <img src={img1} alt="img" className="h-full w-full object-cover " />
             <div className="flex flex-col absolute top-0 left-0 h-full w-full bg-gray-800 bg-opacity-20 justify-center items-center gap-y-6">
               <h1 className="text-white font-bold text-3xl">
@@ -75,7 +75,7 @@ const Catagories = () => {
         </SwiperSlide>
 
         <SwiperSlide className="">
-          <div className="relative bg-purple-900 h-full w-full">
+          <div className="relative bg-gray-800 h-full w-full">
             <img src={img1} alt="img" className="h-full w-full object-cover " />
             <div className="flex flex-col absolute top-0 left-0 h-full w-full bg-gray-800 bg-opacity-20 justify-center items-center gap-y-6">
               <h1 className="text-white font-bold text-3xl">
@@ -87,7 +87,7 @@ const Catagories = () => {
         </SwiperSlide>
 
         <SwiperSlide className="">
-          <div className="relative bg-purple-900 h-full w-full">
+          <div className="relative bg-gray-800 h-full w-full">
             <img src={img1} alt="img" className="h-full w-full object-cover " />
             <div className="flex flex-col absolute top-0 left-0 h-full w-full bg-gray-800 bg-opacity-20 justify-center items-center gap-y-6">
               <h1 className="text-white font-bold text-3xl">

@@ -1,7 +1,7 @@
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { PersonOutline } from "@mui/icons-material";
+import { FavoriteBorderOutlined, PersonOutline } from "@mui/icons-material";
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -83,9 +83,11 @@ const Navbar = () => {
           <div className=" text-4xl text-center cursor-pointer">
             <Link to={"/"}>Duvera</Link>
           </div>
-          <div className="flex gap-x-6">
+          <div className="flex gap-x-4">
             <PersonOutline />
-
+            <Link to={"/wishlist"}>
+              <FavoriteBorderOutlined />
+            </Link>
             <Badge
               badgeContent={4}
               color="secondary"

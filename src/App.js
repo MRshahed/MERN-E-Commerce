@@ -3,6 +3,9 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./component/pages/Home";
 import ProductList from "./component/pages/ProductList";
+import Wishlist from "./component/pages/Wishlist";
+import Error from "./component/pages/Error";
+import Product from "./component/pages/Product";
 
 function App() {
   return (
@@ -10,11 +13,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="products" element={<ProductList />} />
+        <Route path="wishlist" element={<Wishlist />} />
+        <Route path="product" element={<Product />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
-
-//add navbar

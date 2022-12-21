@@ -11,10 +11,11 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <div className="2xl:mx-auto 2xl:container">
+    <div className="mx-auto container">
       <nav className="lg:hidden">
         <Box sx={{ flexGrow: 1 }}>
           <AppBar position="static">
@@ -79,13 +80,21 @@ const Navbar = () => {
               <SearchIcon className="" />
             </div>
           </div>
-          <div className=" text-4xl text-center">Duvera</div>
+          <div className=" text-4xl text-center cursor-pointer">
+            <Link to={"/"}>Duvera</Link>
+          </div>
           <div className="flex gap-x-6">
             <PersonOutline />
 
             <Badge
               badgeContent={4}
               color="secondary"
+              sx={{
+                "& .MuiBadge-badge": {
+                  color: "white",
+                  backgroundColor: "#1F2937",
+                },
+              }}
               className="cursor-pointer"
             >
               <ShoppingCartOutlinedIcon />
@@ -95,7 +104,9 @@ const Navbar = () => {
         <div>
           <ul className="flex justify-center items-center gap-12 font-normal tracking-wider pb-4 text-stone-800">
             <li>New Arrival</li>
-            <li>Clothings</li>
+            <Link to={"/products"}>
+              <li className="cursor-pointer">Clothings</li>
+            </Link>
             <li>Electronics</li>
             <li>Home Decor</li>
             <li>Sports</li>

@@ -3,7 +3,7 @@ import Product from "./Product";
 
 const Products = () => {
   return (
-    <div className="">
+    <div className="container mx-auto">
       <Product />
     </div>
   );

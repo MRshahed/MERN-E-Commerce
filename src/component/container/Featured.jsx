@@ -2,7 +2,7 @@ import React from "react";
 
 const Featured = () => {
   return (
-    <div className="xl:mx-auto xl:container bg-gray-50 mt-10">
+    <div className="mx-auto container bg-gray-100 mt-10">
       <div className="lg:px-10 md:px-6 px-4 md:py-12 py-8">
         <div className="flex flex-col-reverse lg:flex-row items-center">
           <div className="w-full lg:w-1/2 md:py-9 py-6">

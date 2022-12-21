@@ -623,9 +623,6 @@ const ProductList = () => {
 
             <div className=" grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
               <div className=" relative ">
-                <div className=" absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50 ">
-                  <p className="text-xs leading-3 text-gray-800">New</p>
-                </div>
                 <div className=" relative group">
                   <div className=" flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
                   <img
@@ -654,10 +651,11 @@ const ProductList = () => {
               </div>
               <div className=" relative">
                 <div className=" bg-white bg-opacity-50 absolute top-0 right-0 px-2 py-1">
-                  <p className=" text-white fonr-normal text-base leading-4">
+                  <p className=" text-white font-normal text-base leading-4">
                     XS , S , M , L
                   </p>
                 </div>
+
                 <div className="relative group">
                   <div className=" flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
                   <img

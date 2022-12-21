@@ -2,7 +2,7 @@ import React from "react";
 
 const Newsletter = () => {
   return (
-    <div className="2xl:mx-auto 2xl:container py-4">
+    <div className="mx-auto container">
       <div className=" w-full  relative flex items-center justify-center">
         <img
           src="https://i.ibb.co/4sYZ8gC/img-2.png"

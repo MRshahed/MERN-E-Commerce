@@ -11,8 +11,8 @@ import { paymentCard } from "../Data";
 
 const Footer = () => {
   return (
-    <div className=" py-12 bg-gray-900 2xl:mx-auto 2xl:container">
-      <div className="grid grid-cols-2 md:grid-cols-4 md:gap-0 gap-10 items-center justify-center lg:px-10 px-6 container mx-auto">
+    <div className=" py-16 bg-gray-900 mx-auto container flex justify-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 md:gap-0 lg:gap-24 gap-10 items-center justify-center px-6">
         <div className="flex flex-col flex-shrink-0 gap-4 text-gray-200">
           <div>
             <h1 className="font-black text-2xl">Duvera</h1>

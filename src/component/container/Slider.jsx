@@ -10,7 +10,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Slider = () => {
   return (
-    <div className="lg:h-[80.7vh] w-[100%] h-[92.7vh] 2xl:mx-auto 2xl:container">
+    <div className="lg:h-[80vh]  mx-auto container w-full">
       <Swiper
         spaceBetween={0}
         centeredSlides={true}
@@ -22,7 +22,7 @@ const Slider = () => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper h-[100%] bg-gray-800"
       >

@@ -3,14 +3,9 @@ import Navbar from "../navbar/Navbar";
 import Announcement from "../container/Announcement";
 import Footer from "../container/Footer";
 const Product = () => {
-  const [rotate, setRotate] = useState(false);
   const [count, setCount] = useState(0);
   const [color, setColor] = useState("White");
   const [size, setSize] = useState("");
-  const [menu, setMenu] = useState(true);
-  const [slide, setSlide] = useState(true);
-
-  const slideToggle = () => setSlide(!slide);
 
   const getColor = (value) => {
     setColor(value);
@@ -248,7 +243,7 @@ const Product = () => {
               <hr className=" bg-gray-200 w-full mt-4" />
             </div>
 
-            <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-medium text-base leading-4 text-white bg-gray-800 w-full py-5 lg:mt-10 mt-6">
+            <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-medium text-base leading-4 text-white bg-gray-800 w-full py-5 lg:mt-4 mt-6">
               Add to Cart
             </button>
             <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-medium text-base leading-4 text-gray-800 bg-gray-200 w-full py-5 lg:mt-4 mt-4">

@@ -34,13 +34,25 @@ const Navbar = () => {
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 Duvera
               </Typography>
+              <SearchIcon className="mr-4" />
+              <PersonOutline className="mr-2" />
+              <Link to={"/wishlist"}>
+                <FavoriteBorderOutlined className="mr-2" />
+              </Link>
               <Badge
                 badgeContent={4}
-                color="primary"
+                color="secondary"
+                sx={{
+                  "& .MuiBadge-badge": {
+                    color: "white",
+                    backgroundColor: "#1F2937",
+                  },
+                }}
                 className="cursor-pointer"
               >
-                <SearchIcon className="mr-4" />
-                <ShoppingCartOutlinedIcon />
+                <Link to={"/cart"}>
+                  <ShoppingCartOutlinedIcon />
+                </Link>
               </Badge>
             </Toolbar>
           </AppBar>
@@ -67,7 +79,6 @@ const Navbar = () => {
               <li>Cars</li>
               <li>Others</li>
             </ul>
-            <p>LOGIN</p>
           </div>
         </nav>
       )}
@@ -99,7 +110,9 @@ const Navbar = () => {
               }}
               className="cursor-pointer"
             >
-              <ShoppingCartOutlinedIcon />
+              <Link to={"/cart"}>
+                <ShoppingCartOutlinedIcon />
+              </Link>
             </Badge>
           </div>
         </div>

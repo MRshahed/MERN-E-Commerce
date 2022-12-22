@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-const Login = () => {
+const Register = () => {
   const [showpass, setShowPass] = useState(false);
   return (
     <>
@@ -29,18 +29,18 @@ const Login = () => {
               tabIndex={0}
               className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800"
             >
-              Login to your account
+              Create your account
             </p>
             <p
               tabIndex={0}
               className="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500"
             >
-              Dont have account?
+              Already have an account?
               <a
                 href="javascript:void(0)"
                 className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer"
               >
-                <Link to={"/register"}>Sign up here</Link>
+                <Link to={"/login"}>Sign In here</Link>
               </a>
             </p>
             <button
@@ -127,11 +127,40 @@ const Login = () => {
             </div>
             <div>
               <label
+                htmlFor="name"
+                className="text-sm font-medium leading-none text-gray-800"
+              >
+                Full Name
+              </label>
+              <input
+                id="name"
+                aria-labelledby="name"
+                type="text"
+                className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2"
+                placeholder="e.g: Shahed Hossen "
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="mobile"
+                className="text-sm font-medium leading-none text-gray-800"
+              >
+                Mobile
+              </label>
+              <input
+                id="mobile"
+                aria-labelledby="mobile"
+                type="phone"
+                className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2"
+                placeholder="e.g: +880123456789 "
+              />
+            </div>
+            <div>
+              <label
                 htmlFor="email"
                 className="text-sm font-medium leading-none text-gray-800"
               >
-                {" "}
-                Email{" "}
+                Email
               </label>
               <input
                 id="email"
@@ -146,8 +175,7 @@ const Login = () => {
                 htmlFor="myInput"
                 className="text-sm font-medium leading-none text-gray-800"
               >
-                {" "}
-                Password{" "}
+                Password
               </label>
               <div className="relative flex items-center justify-center">
                 <input
@@ -200,7 +228,7 @@ const Login = () => {
                 type="button"
                 className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-gray-800 border rounded hover:bg-indigo-600 py-4 w-full"
               >
-                Sign In
+                Sign Up
               </button>
             </div>
           </div>
@@ -273,4 +301,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

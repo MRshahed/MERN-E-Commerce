@@ -8,6 +8,7 @@ import Error from "./component/pages/Error";
 import Product from "./component/pages/Product";
 import Login from "./component/pages/Login";
 import ShopingCart from "./component/pages/ShopingCart";
+import Register from "./component/pages/Register";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="wishlist" element={<Wishlist />} />
         <Route path="product" element={<Product />} />
         <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
         <Route path="cart" element={<ShopingCart />} />
         <Route path="*" element={<Error />} />
       </Routes>

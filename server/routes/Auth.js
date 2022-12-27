@@ -24,16 +24,21 @@ Router.post("/register", async (req, res) => {
 Router.post("/login", async (req, res) => {
   try {
     const foundUser = await User.findOne({ username: req.body.username });
-    !foundUser && res.status(400).json("User not Found");
 
-    const validated = await bcrypt.compare(
-      req.body.password,
-      foundUser.password
-    );
-    !validated && res.status(400).json("Wrong Credentials");
-
-    const { password, ...others } = foundUser._doc;
-    res.status(200).json(others);
+    if (!foundUser) {
+      return res.status(400).json("User not Found");
+    } else {
+      const validated = await bcrypt.compare(
+        req.body.password,
+        foundUser.password
+      );
+      if (!validated) {
+        return res.status(400).json("Wrong Credentials");
+      } else {
+        const { password, ...others } = foundUser._doc;
+        return res.status(200).json(others);
+      }
+    }
   } catch (err) {
     res.status(500).json(err);
   }

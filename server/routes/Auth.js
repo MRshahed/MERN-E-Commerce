@@ -2,6 +2,7 @@ const Router = require("express").Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
+const jwt = require("jsonwebtoken");
 
 //Create User
 Router.post("/register", async (req, res) => {
@@ -35,8 +36,17 @@ Router.post("/login", async (req, res) => {
       if (!validated) {
         return res.status(400).json("Wrong Credentials");
       } else {
+        const accessToken = jwt.sign(
+          {
+            id: foundUser._id,
+            isAdmin: foundUser.isAdmin,
+          },
+          process.env.JWT_SECRET_KEY,
+          { expiresIn: "3d" }
+        );
+
         const { password, ...others } = foundUser._doc;
-        return res.status(200).json(others);
+        return res.status(200).json({ ...others, accessToken });
       }
     }
   } catch (err) {

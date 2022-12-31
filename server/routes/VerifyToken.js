@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const VerifyToken = (req, res, next) => {
   const authHeader = req.headers.token;
   if (authHeader) {
+    const token = authHeader.split(" ")[1];
     jwt.verify(token, process.env.JWT_SECRET_KEY, (err, data) => {
       if (err) {
         return res.status(403).json("Token invalid");
@@ -16,7 +17,7 @@ const VerifyToken = (req, res, next) => {
   }
 };
 
-const verifyTokenAuth = (res, res, next) => {
+const verifyTokenAuth = (req, res, next) => {
   VerifyToken(req, res, () => {
     if (req.data.id === req.params.id || req.data.isAdmin) {
       next();

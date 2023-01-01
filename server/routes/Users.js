@@ -1,11 +1,15 @@
-const { VerifyToken, verifyTokenAuth } = require("./VerifyToken");
+const {
+  VerifyToken,
+  verifyTokenAuth,
+  verifyTokenAdmin,
+} = require("./VerifyToken");
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 const Router = require("express").Router();
 
-//Update
+//Update User
 Router.put("/:id", verifyTokenAuth, async (req, res) => {
   if (req.body.password) {
     req.body.password = await bcrypt.hash(req.body.password, saltRounds);
@@ -22,11 +26,22 @@ Router.put("/:id", verifyTokenAuth, async (req, res) => {
   }
 });
 
-//Delete
+//Delete User
 Router.delete("/:id", verifyTokenAuth, async (req, res) => {
   try {
     await User.findByIdAndDelete(req.params.id);
     res.status(200).json("User deleted");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//Get User
+Router.get("/:id", verifyTokenAdmin, async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    const { password, ...others } = user._doc;
+    return res.status(200).json(others);
   } catch (err) {
     res.status(500).json(err);
   }

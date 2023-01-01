@@ -22,4 +22,14 @@ Router.put("/:id", verifyTokenAuth, async (req, res) => {
   }
 });
 
+//Delete
+Router.delete("/:id", verifyTokenAuth, async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+    res.status(200).json("User deleted");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = Router;

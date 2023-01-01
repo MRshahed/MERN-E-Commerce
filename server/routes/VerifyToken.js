@@ -26,5 +26,13 @@ const verifyTokenAuth = (req, res, next) => {
     }
   });
 };
-
-module.exports = { VerifyToken, verifyTokenAuth };
+const verifyTokenAdmin = (req, res, next) => {
+  VerifyToken(req, res, () => {
+    if (req.data.isAdmin) {
+      next();
+    } else {
+      res.status(403).json("Unauthorized");
+    }
+  });
+};
+module.exports = { VerifyToken, verifyTokenAuth, verifyTokenAdmin };

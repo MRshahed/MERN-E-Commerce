@@ -47,4 +47,15 @@ Router.get("/:id", verifyTokenAdmin, async (req, res) => {
   }
 });
 
+//Get All User
+Router.get("/", verifyTokenAdmin, async (req, res) => {
+  try {
+    const user = await User.find();
+    // const { password, ...others } = user._doc;
+    return res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = Router;

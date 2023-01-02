@@ -9,6 +9,40 @@ const saltRounds = 10;
 
 const Router = require("express").Router();
 
+//Get All User
+Router.get("/", verifyTokenAdmin, async (req, res) => {
+  try {
+    const user = await User.find();
+    // const { password, ...others } = user._doc;
+    return res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//Get user Stats
+Router.get("/stats", verifyTokenAdmin, async (req, res) => {
+  const date = new Date();
+  const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
+  try {
+    const data = await User.aggregate([
+      { $match: { createdAt: { $gte: lastYear } } },
+      {
+        $project: { month: { $month: "$createdAt" } },
+      },
+      {
+        $group: {
+          _id: "$month",
+          total: { $sum: 1 },
+        },
+      },
+    ]);
+    return res.status(200).json(data);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //Update User
 Router.put("/:id", verifyTokenAuth, async (req, res) => {
   if (req.body.password) {
@@ -42,17 +76,6 @@ Router.get("/:id", verifyTokenAdmin, async (req, res) => {
     const user = await User.findById(req.params.id);
     const { password, ...others } = user._doc;
     return res.status(200).json(others);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-//Get All User
-Router.get("/", verifyTokenAdmin, async (req, res) => {
-  try {
-    const user = await User.find();
-    // const { password, ...others } = user._doc;
-    return res.status(200).json(user);
   } catch (err) {
     res.status(500).json(err);
   }

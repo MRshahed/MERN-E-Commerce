@@ -7,7 +7,7 @@ const Product = require("../models/Product");
 const Router = require("express").Router();
 
 //Create Product
-Router.get("/", verifyTokenAdmin, async (req, res) => {
+Router.post("/", verifyTokenAdmin, async (req, res) => {
   const newProduct = new Product(req.body);
   try {
     const product = await newProduct.save();

@@ -17,4 +17,37 @@ Router.post("/", verifyTokenAdmin, async (req, res) => {
   }
 });
 
+//Update Product
+Router.put("/:id", verifyTokenAdmin, async (req, res) => {
+  try {
+    const updatedProduct = await Product.findById(
+      req.params.id,
+      { $set: req.body },
+      { new: true }
+    );
+    res.status(200).json(updatedProduct);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//Get product
+Router.get("/:id", verifyTokenAdmin, async (req, res) => {
+  try {
+    const user = await Product.findById(req.params.id);
+    return res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+//Get All product
+Router.get("/", verifyTokenAdmin, async (req, res) => {
+  try {
+    const user = await Product.find();
+
+    return res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = Router;

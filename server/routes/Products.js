@@ -31,21 +31,44 @@ Router.put("/:id", verifyTokenAdmin, async (req, res) => {
   }
 });
 
-//Get product
-Router.get("/:id", verifyTokenAdmin, async (req, res) => {
+//Delete Product
+Router.delete("/:id", verifyTokenAdmin, async (req, res) => {
   try {
-    const user = await Product.findById(req.params.id);
-    return res.status(200).json(user);
+    await Product.findByIdAndDelete(req.params.id);
+    res.status(200).json("Product deleted");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//Get product
+Router.get("/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    return res.status(200).json(product);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 //Get All product
-Router.get("/", verifyTokenAdmin, async (req, res) => {
-  try {
-    const user = await Product.find();
+Router.get("/", async (req, res) => {
+  const qNew = req.query.new;
+  const qCatagory = req.query.catagory;
 
-    return res.status(200).json(user);
+  try {
+    let products;
+    if (qNew) {
+      products = await Product.find().sort({ createdAt: -1 }).limit(5);
+    } else if (qCatagory) {
+      products = await Product.find({
+        catagories: {
+          $in: [qCatagory],
+        },
+      });
+    } else {
+      products = await Product.find();
+    }
+    return res.status(200).json(products);
   } catch (err) {
     res.status(500).json(err);
   }

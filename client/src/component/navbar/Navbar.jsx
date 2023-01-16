@@ -95,7 +95,9 @@ const Navbar = () => {
             <Link to={"/"}>Duvera</Link>
           </div>
           <div className="flex gap-x-4">
-            <PersonOutline />
+            <Link to={"/register"}>
+              <PersonOutline />
+            </Link>
             <Link to={"/wishlist"}>
               <FavoriteBorderOutlined />
             </Link>

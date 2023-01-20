@@ -12,8 +12,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const quantity = useSelector((state) => state.cart.quantity);
+
   return (
     <div className="mx-auto container">
       <nav className="lg:hidden">
@@ -40,8 +43,8 @@ const Navbar = () => {
                 <FavoriteBorderOutlined className="mr-2" />
               </Link>
               <Badge
-                badgeContent={4}
-                color="secondary"
+                badgeContent={1}
+                showZero
                 sx={{
                   "& .MuiBadge-badge": {
                     color: "white",
@@ -102,7 +105,8 @@ const Navbar = () => {
               <FavoriteBorderOutlined />
             </Link>
             <Badge
-              badgeContent={4}
+              badgeContent={quantity}
+              showZero
               color="secondary"
               sx={{
                 "& .MuiBadge-badge": {

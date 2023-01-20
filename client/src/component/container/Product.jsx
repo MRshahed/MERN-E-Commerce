@@ -1,8 +1,4 @@
 import React from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { popularProducts } from "../../component/Data";
 
 const Product = () => {
   return (
